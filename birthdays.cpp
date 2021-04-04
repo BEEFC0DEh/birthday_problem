@@ -2,11 +2,8 @@
 #include <iomanip>
 #include <vector>
 #include <unordered_set>
-#include <algorithm>
 #include <random>
-#include <cassert>
 #include <string>
-#include <functional>
 
 static  const   unsigned int DAYS = 366;
 static          size_t SAMPLES = 1'000'0;
