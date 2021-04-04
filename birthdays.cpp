@@ -20,8 +20,15 @@ public:
     Dice(const Dice &) = delete;
     Dice(Dice &&) = delete;
 
+    ~Dice() {
+        std::cout.imbue(std::locale(""));
+        std::cout << "Made " << m_rolls << " dice rolls." << std::endl;
+    }
+
     Int roll()
     {
+        m_rolls++;
+
         if (m_sides == 0) return 0; // Broken dice
         if (m_sides == 1) return 1; // Well, you asked for this
 
@@ -30,6 +37,7 @@ public:
 
 private:
     const Int m_sides;
+    unsigned long long m_rolls = 0;
     std::mt19937 m_gen;
     std::uniform_int_distribution<Int> m_distribution;
 };
